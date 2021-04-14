@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
-using EAD2CA2.Data;
+using EAD2CA2.Models;
 
 
 namespace EAD2CA2
@@ -29,8 +29,6 @@ namespace EAD2CA2
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EAD2CA2", Version = "v1" });
             });
             // DI db context
-            //services.AddDbContext<VideoGameContext>(options =>
-            //        options.UseSqlServer(Configuration.GetConnectionString("VideoGameContext")));
             services.AddDbContext<VideoGameContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("VideoGameContext")));
 

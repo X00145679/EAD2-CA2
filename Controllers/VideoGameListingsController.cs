@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EAD2CA2;
-using EAD2CA2.Data;
+using EAD2CA2.Models;
 
 namespace EAD2CA2.Controllers
 {
@@ -26,11 +26,32 @@ namespace EAD2CA2.Controllers
             return _context.VideoGameListing.OrderBy(s => s.Title);
         }
 
+        // GET api/{title}
+        [HttpGet("SearchByTitle/{title}")]
+        public IEnumerable<VideoGameListing> SearchForTitle(string title)
+        {
+            return _context.VideoGameListing.Where(s => s.Title == title);
+        }
+
         // GET api/all
         [HttpGet("OrderByDate")]
         public IEnumerable<VideoGameListing> GetAllListingsByDate()
         {
             return _context.VideoGameListing.OrderBy(s => s.ReleaseDate);
+        }
+
+        // GET api/all
+        [HttpGet("FilterByRating/{rating}")]
+        public IEnumerable<VideoGameListing> FilterListingsByRating(int rating)
+        {
+            return _context.VideoGameListing.Where(s => s.AgeRating == rating);
+        }
+
+        // GET api/
+        [HttpGet("FilterByDateRange/{date1}/{date2}")]
+        public IEnumerable<VideoGameListing> FilterListingsByDateRange(DateTime date1, DateTime date2)
+        {
+            return _context.VideoGameListing.Where(s => s.ReleaseDate > date1 && s.ReleaseDate < date2);
         }
 
         // GET: VideoGameListings
@@ -68,7 +89,7 @@ namespace EAD2CA2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate")] VideoGameListing videoGameListing)
+        public async Task<IActionResult> Create([Bind("ID,Title,AgeRating,ReleaseDate")] VideoGameListing videoGameListing)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +121,7 @@ namespace EAD2CA2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate")] VideoGameListing videoGameListing)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,AgeRating,ReleaseDate")] VideoGameListing videoGameListing)
         {
             if (id != videoGameListing.ID)
             {

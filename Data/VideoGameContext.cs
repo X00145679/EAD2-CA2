@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using EAD2CA2;
 
-namespace EAD2CA2.Data
+namespace EAD2CA2.Models
 {
     public class VideoGameContext : DbContext
     {
@@ -14,6 +14,6 @@ namespace EAD2CA2.Data
         {
         }
 
-        public DbSet<EAD2CA2.VideoGameListing> VideoGameListing { get; set; }
+        public DbSet<EAD2CA2.Models.VideoGameListing> VideoGameListing { get; set; }
     }
 }
