@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EAD2CA2;
-using EAD2CA2.Models;
+using EAD2CA2.Data;
 
 namespace EAD2CA2.Controllers
 {

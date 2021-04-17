@@ -1,23 +1,25 @@
 ﻿<Properties StartupConfiguration="{86D47B47-EB7A-43F4-8761-0538D182E68C}|Default">
   <MonoDevelop.Ide.ItemProperties.EAD2CA2 PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/VideoGameListingsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/VideoGameListings/Index.cshtml">
     <Files>
-      <File FileName="Controllers/VideoGameListingsController.cs" Line="47" Column="64" />
-      <File FileName="Data/VideoGameContext.cs" Line="1" Column="1" />
-      <File FileName="VideoGameListing.cs" Line="16" Column="36" />
+      <File FileName="Views/VideoGameListings/Edit.cshtml" Line="1" Column="15" />
+      <File FileName="Views/VideoGameListings/Create.cshtml" Line="1" Column="15" />
+      <File FileName="Views/VideoGameListings/Delete.cshtml" Line="1" Column="1" />
+      <File FileName="Views/VideoGameListings/Details.cshtml" Line="1" Column="15" />
+      <File FileName="Views/VideoGameListings/Index.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="EAD2CA2" expanded="True">
             <Node name="EAD2CA2" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="VideoGameListingsController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="VideoGameListings" expanded="True" />
+                <Node name="VideoGameListings" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
               </Node>
               <Node name="appsettings.json" expanded="True" />
             </Node>

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EAD2CA2.Models
+namespace EAD2CA2
 {
     public class VideoGameListing
     {
