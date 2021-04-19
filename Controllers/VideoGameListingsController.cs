@@ -30,7 +30,7 @@ namespace EAD2CA2.Controllers
         [HttpGet("SearchByTitle/{title}")]
         public IEnumerable<VideoGameListing> SearchForTitle(string title)
         {
-            return _context.VideoGameListing.Where(s => s.Title == title);
+            return _context.VideoGameListing.Where(s => s.Title.ToLower().Contains( title.ToLower()));
         }
 
         // GET api/all
